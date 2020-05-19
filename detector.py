@@ -12,7 +12,7 @@ while True:
     for (x,y,w,h) in faces:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(193,182,255),2)
         id,conf=recognizer.predict(gray[y:y+h,x:x+w])
-        cv2.putText(frame,str("TCA"+str(id)),(x,y+h),font,1,255)
+        cv2.putText(frame,str(id),(x,y+h),font,1,255)
     cv2.imshow('face',frame)
     if cv2.waitKey(1)==13:
         break
